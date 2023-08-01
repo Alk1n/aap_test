@@ -1,0 +1,9 @@
+hosts: all
+gather_facts: True
+tasks:
+- name: Get Hostname
+  shell: hostname
+  register: cmd_out
+
+- debug:
+    var: cmd_out
