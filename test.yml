@@ -1,9 +1,11 @@
-hosts: all
-gather_facts: True
-tasks:
-- name: Get Hostname
-  shell: hostname
-  register: cmd_out
+---
+- name: Test Job for AAP 2.4
+  hosts: all
+  gather_facts: True
+  tasks:
+  - name: Get Hostname
+    shell: hostname
+    register: cmd_out
 
-- debug:
-    var: cmd_out
+  - debug:
+      var: cmd_out
