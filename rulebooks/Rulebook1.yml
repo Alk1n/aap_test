@@ -1,0 +1,12 @@
+- name: Listen httpd
+  hosts: all
+  sources:
+  - ansible.eda.url_check:
+    urls:
+    - http://target
+  rules:
+  - name: Start My Job Template
+    condition: event.url_check.status == "down"
+    action:
+      run_playbook:
+        name: "Test Job Template"
