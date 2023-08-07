@@ -1,0 +1,16 @@
+---
+- name: Check URL
+  hosts: all
+  sources:
+  - ansible.eda.url_check:
+      urls:
+       - http://192.168.44.133
+
+  rules:
+    - name: Debug Message
+      condition: event.url_check.status == "up"
+      action:
+        run_module:
+          name: ansible.builtin.debug
+          module_args:
+             msg: "BASARILI SEKILDE HOST EDILIYOR"
