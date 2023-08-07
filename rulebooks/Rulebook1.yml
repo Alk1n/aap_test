@@ -10,5 +10,5 @@
   - name: Start My Job Template
     condition: event.payload.message == "Run My Job"
     action:
-      run_playbook:
+      run_job_template:
         name: "Test Job Template"
