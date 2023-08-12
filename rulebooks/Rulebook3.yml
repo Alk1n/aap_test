@@ -11,4 +11,4 @@
     condition: event.payload.message == "Run My Job"
     action:
       debug:
-        var: event
+        msg: "--- CONDITION MATCHED ---"
