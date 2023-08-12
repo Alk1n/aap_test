@@ -8,7 +8,7 @@
       
   rules:
   - name: Start My Job Template
-    condition: "'restart' in event.payload.message"
+    condition: event.payload.message == "Run My Job"
     action:
       debug:
         var: event
